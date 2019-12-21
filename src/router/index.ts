@@ -1,14 +1,14 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
+import SearchAge from '../views/SearchAge.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: Home,
+    path: '/search-age',
+    name: 'search-age',
+    component: SearchAge,
   },
   {
     path: '/about',
