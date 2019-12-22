@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import SearchAge from '../views/SearchAge.vue';
+import LowerBound from '../views/LowerBound.vue';
 
 Vue.use(VueRouter);
 
@@ -9,6 +10,11 @@ const routes = [
     path: '/search-age',
     name: 'search-age',
     component: SearchAge,
+  },
+  {
+    path: '/lower-bound',
+    name: 'lower-bound',
+    component: LowerBound,
   },
   {
     path: '/about',

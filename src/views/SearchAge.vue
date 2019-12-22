@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="search-age">
     <v-container class="grey lighten-5">
       <v-row
         v-for="n in 1"
@@ -48,9 +48,4 @@ export default {
 </script>
 
 <style scoped>
-.inline-block {
-  display: inline-block;      /* インラインブロック要素にする */
-  padding:  10%;             /* 余白指定 */
-  height: 100px;              /* 高さ指定 */
-}
 </style>

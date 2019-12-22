@@ -4,20 +4,21 @@
     <div v-if="!end">
       <h1>{{ lb }} 歳ですか??</h1>
       <v-row align="center">
-        <v-col class="text-center" cols="12" sm="4">
+        <v-col class="text-center" cols="12" sm="2">
           <div class="my-2">
-            <v-btn small color="primary" @click="yes()">YES</v-btn>
+            <v-btn color="primary" @click="yes()">YES</v-btn>
           </div>
         </v-col>
-        <v-col class="text-center" cols="12" sm="4">
+        <v-col class="text-center" cols="12" sm="2">
           <div class="my-2">
-            <v-btn small color="primary" @click="no()">NO</v-btn>
+            <v-btn color="primary" @click="no()">NO</v-btn>
           </div>
         </v-col>
       </v-row>
     </div>
     <div v-else>
       <h1>あなたの年齢は{{ lb }}ですね</h1>
+      <v-btn color="primary" outlined @click="restart()">やり直す</v-btn>
     </div>
 
     <v-icon v-for="i of cnt" :key="i">mdi-fish</v-icon>
@@ -42,6 +43,12 @@ export default class BinarySearch extends Vue {
   private no(): void {
     this.cnt++;
     this.lb = this.lb + 1;
+  }
+  private restart(): void {
+    this.lb = 0;
+    this.ub = 100;
+    this.cnt = 0;
+    this.end = false;
   }
 }
 </script>

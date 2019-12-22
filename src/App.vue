@@ -1,45 +1,74 @@
 <template>
-  <v-app>
+  <v-app id="inspire">
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+      right
+    >
+      <v-list dense>
+        <v-list-item link to="/search-age">
+          <v-list-item-action>
+            <v-icon>mdi-owl</v-icon>
+          </v-list-item-action>
+
+          <v-list-item-content>
+            <v-list-item-title>年齢当てゲーム</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-list-item link to="/lower-bound">
+          <v-list-item-action>
+            <v-icon>mdi-panda</v-icon>
+          </v-list-item-action>
+
+          <v-list-item-content>
+            <v-list-item-title>配列検索</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
     <v-app-bar
       app
-      color="primary"
+      color="cyan"
       dark
     >
-      <div class="d-flex align-center">
-        <h1>年齢当てゲーム</h1>
-      </div>
+        <v-toolbar-title class="headline text-uppercase">
+          <span>BINARY</span>
+          <span class="font-weight-light">SEARCH</span>
+        </v-toolbar-title>
+      <v-spacer />
 
-      <v-spacer></v-spacer>
+      <v-toolbar-title>メニュー</v-toolbar-title>
 
-      <v-btn
-        href="https://twitter.com/monkukui2"
-        target="_blank"
-        text
-      >
-        <v-icon>mdi-emoticon-happy</v-icon>
-        <span class="mr-2">monkukui</span>
-      </v-btn>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
     </v-app-bar>
 
     <v-content>
-      <router-view></router-view>
+      <v-container fluid>
+        <router-view></router-view>
+      </v-container>
     </v-content>
+
+    <v-footer
+      color="cyan"
+      app
+    >
+      <v-spacer />
+
+      <span class="white--text">&copy; monkukui 2019</span>
+    </v-footer>
   </v-app>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
-
-export default Vue.extend({
-  name: 'App',
-
-  components: {
-    HelloWorld,
-  },
-
-  data: () => ({
-    //
-  }),
-});
+<script>
+  export default {
+    name: 'LayoutsDemosBaselineFlipped',
+    props: {
+      source: String,
+    },
+    data: () => ({
+      drawer: null,
+    }),
+  }
 </script>
